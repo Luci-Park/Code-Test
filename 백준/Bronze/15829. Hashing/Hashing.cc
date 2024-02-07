@@ -1,19 +1,23 @@
-# include <iostream>
-# include <vector>
-# include <string>
-# include <cmath>
+#include <iostream>
+#include <string>
+#include <cmath>
 using namespace std;
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	long long M = 1234567891;
+	long long r = 1;
+	long long answer = 0;
+	int numberOfNum;
+	string numbers;
+	cin >> numberOfNum >> numbers;
+	for (int i = 0; i < numberOfNum; i++)
+	{
+		answer = (answer + (numbers[i] - 'a' + 1) * r) % M;
+		r = (r * 31) % M;
+	}
+	cout << answer;
 
-int main ()
-{ 
-  long long M = 1234567891, R = 31, r =1, result = 0; int L; 
-  string str;
-  scanf("%d", &L);
-  cin >> str;
-  for(char c: str){
-    result = (result + (c-'a' + 1) * r)%M;
-    r = (r*R)%M;
-  }
-  cout << result;
-  return 0;
+	return 0;
 }
