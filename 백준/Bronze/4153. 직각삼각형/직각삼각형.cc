@@ -1,19 +1,19 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <iostream>
 
 int main()
 {
-    while(1){
-        int x, y, z;
-        cin >> x >> y>> z;
-        if(x == 0 || y == 0 || z == 0) break;
-        int px = x * x;
-        int py = y*y;
-        int pz = z * z;
-        if(px + py == pz || px + pz == py || py + pz == px)
-        {cout << "right\n";}
-        else {cout << "wrong\n";}
-    }
-    return 0;
+	int a, b, c;
+	while (1)
+	{
+		std::cin >> a >> b >> c;
+		if (!a || !b || !c) break;
+		int aa = a * a;
+		int bb = b * b;
+		int cc = c * c;
+		if (aa == bb + cc || bb == aa + cc || cc == aa + bb)
+			std::cout << "right\n";
+		else
+			std::cout << "wrong\n";
+	}
+	return 0;
 }
