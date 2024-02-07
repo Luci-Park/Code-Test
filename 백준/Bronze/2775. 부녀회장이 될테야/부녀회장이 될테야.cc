@@ -1,39 +1,30 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int main()
 {
-    int T;
-    cin >> T;
-    int v[T];
-    
-    for(int a = 0; a<T; ++a){
-        int k, n;
-        cin >> k >> n;
-        int apt[k + 1][n];
-    
-        for(int i =0; i <= k; ++i){
-            for(int j = 1; j<= n; ++j){
-                if(i == 0){
-                    apt[i][j-1] = j;
-                }
-                else{
-                    if(j == 1){
-                        apt[i][j - 1] = 1;
-                    }
-                    else{
-                        apt[i][j-1] = apt[i-1][j-1] + apt[i][j-2];
-                    }
-                }
-            }
-        }
-        v[a] = apt[k][n-1];
-    }
-    
-    for(int a = 0; a < T; ++a){
-        cout << v[a] << "\n";
-    }
-    
-    return 0;
+	int T;
+	int apart[15][15];
+	cin >> T;
+	for (int i = 0; i < 15; i++)
+	{
+		apart[i][1] = 1;
+		apart[0][i] = i;
+	}
+	
+	for (int i = 1; i < 15; i++)
+	{
+		for (int j = 2; j < 15; j++)
+		{
+			apart[i][j] = apart[i][j - 1] + apart[i - 1][j];
+		}
+	}
+
+	while (T--)
+	{
+		int k, n;
+		cin >> k >> n;
+		cout << apart[k][n]<<"\n";
+	}
+	return 0;
 }
