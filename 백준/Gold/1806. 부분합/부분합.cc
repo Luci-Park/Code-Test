@@ -19,7 +19,7 @@ int sol(int n, long s)
 	{
 		if (sum < s)
 		{
-			if (right <= n - 1) sum += numbers[right++];
+			if (right < n) sum += numbers[right++];
 			else break;
 		}
 		else
