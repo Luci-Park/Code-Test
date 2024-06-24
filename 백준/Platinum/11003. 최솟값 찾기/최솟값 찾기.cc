@@ -1,25 +1,24 @@
 #include <iostream>
-#include <queue>
+#include <deque>
 using namespace std;
 int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(0); cout.tie(0);
 	long long l, n;
-	priority_queue<pair<long, long>> minNum;
+	deque<pair<long, long>> minNum;
 	cin >> n >> l;
 	
 	for (long i = 0; i < n; i++)
 	{
-		while (!minNum.empty() && minNum.top().second * -1 < i - l + 1)
-			minNum.pop();
-
+		while (!minNum.empty() && (minNum.front().first < i - l + 1)) minNum.pop_front();
 		long num; cin >> num;
-		minNum.push({ -num, -i });
-		
-		cout << -minNum.top().first << " ";
-	}
+		while (!minNum.empty() && minNum.back().second > num) minNum.pop_back();
+		minNum.push_back({i, num});
 
+
+		cout << minNum.front().second << " ";
+	}
 
 	return 0;
 }
