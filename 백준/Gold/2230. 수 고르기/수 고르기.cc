@@ -12,13 +12,13 @@ int main() {
 		cin >> arr[i];
 	int answer = -1;
 	sort(arr, arr + n);
-	for (int i = 0; i < n; i++)
+	int lo = 0, hi = 0;
+	while (answer != m && lo < n && hi < n)
 	{
-		if (arr[i] + m > arr[n - 1]) break;
-		auto it = lower_bound(arr, arr + n, arr[i] + m);
-		int diff = (*it) - arr[i];
-		if (diff >= m && (answer == -1 || diff < answer))
-			answer = diff;
+		while (arr[hi] - arr[lo] < m) hi++;
+		int diff = arr[hi] - arr[lo];
+		if (answer == -1 || diff < answer) answer = diff;
+		lo++;
 	}
 	cout << answer;
 
