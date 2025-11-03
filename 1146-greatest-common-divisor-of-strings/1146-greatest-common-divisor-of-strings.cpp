@@ -10,30 +10,11 @@ private:
         }
         return a;
     }
-    bool isvalid(string& base, string& pattern)
-    {
-        if(base.size() == pattern.size()) return true;
-        int i = pattern.size();
-        while(i < base.size())
-        {
-            int idx = i % pattern.size();
-            if(base[i++] != pattern[idx]) return false;
-        }
-        return true;
-    }
 public:
     string gcdOfStrings(string str1, string str2) {
-        string rslt = "";
+        if(str1 + str2 != str2 + str1) 
+            return "";
         int len = gcd(max(str1.size(), str2.size()), min(str1.size(), str2.size()));
-        for(int i = 0; i < len; i++)
-        {
-            if(str1[i] == str2[i])
-                rslt += str1[i];
-            else
-                return "";
-        }
-        if(isvalid(str1, rslt) && isvalid(str2, rslt)) 
-            return rslt;
-        return "";
+        return str1.substr(0, len);
     }
 };
