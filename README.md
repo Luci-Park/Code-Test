@@ -23,8 +23,13 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0605-can-place-flowers](https://github.com/Luci-Park/Code-Test/tree/master/0605-can-place-flowers) |
 | [1528-kids-with-the-greatest-number-of-candies](https://github.com/Luci-Park/Code-Test/tree/master/1528-kids-with-the-greatest-number-of-candies) |
+| [1929-concatenation-of-array](https://github.com/Luci-Park/Code-Test/tree/master/1929-concatenation-of-array) |
 ## Greedy
 |  |
 | ------- |
 | [0605-can-place-flowers](https://github.com/Luci-Park/Code-Test/tree/master/0605-can-place-flowers) |
+## Simulation
+|  |
+| ------- |
+| [1929-concatenation-of-array](https://github.com/Luci-Park/Code-Test/tree/master/1929-concatenation-of-array) |
 <!---LeetCode Topics End-->
